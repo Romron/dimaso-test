@@ -32,7 +32,10 @@ class Soccer_teams_dt
       );
    }
 
-
+   public function register()
+   {
+      add_action('init', [$this, 'custom_post_type']);
+   }
 
    static function activation()
    {
@@ -47,7 +50,8 @@ class Soccer_teams_dt
 }
 
 if (class_exists('Soccer_teams_dt')) {
-   $Soccer_teams_dt = new Soccer_teams_dt();
+   $soccer_teams_dt = new Soccer_teams_dt();
+   $soccer_teams_dt->register();
 }
-register_activation_hook(__FILE__, array($Soccer_teams_dt, 'activation'));
-register_deactivation_hook(__FILE__, array($Soccer_teams_dt, 'deactivation'));
+register_activation_hook(__FILE__, array($soccer_teams_dt, 'activation'));
+register_deactivation_hook(__FILE__, array($soccer_teams_dt, 'deactivation'));
