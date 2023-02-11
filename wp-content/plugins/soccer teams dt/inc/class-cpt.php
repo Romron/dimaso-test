@@ -35,7 +35,7 @@ if (!class_exists('SocTeamCpt')) {
                'has_archive' => true,
                'rewrite' => array('slug' => 'soccer-teams'),
                'label' => esc_html__('Soccer Team', ' soccer-teams-dt'),  // add array labels
-               'supports' => array('title', 'editor', 'thumbnail'),
+               'supports' => array('title', 'thumbnail'),
                'labels' => $labels_soccer_team,
             )
          );

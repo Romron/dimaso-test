@@ -2,6 +2,6 @@
 
 get_header();
 
-echo "Archive soccer teams";
+echo "Soccer team page";
 
 get_footer();
