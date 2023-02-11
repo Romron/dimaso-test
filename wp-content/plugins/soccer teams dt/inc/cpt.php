@@ -4,7 +4,11 @@ if (!class_exists('SocTeamCpt')) {
 
    class SocTeamCpt
    {
-
+      public function register()
+      {
+         add_action('init', [$this, 'custom_post_type']);
+         add_action('add_meta_boxes', [$this, 'add_metabox_soccer_team']);
+      }
 
       public function custom_post_type()
       {
@@ -44,9 +48,40 @@ if (!class_exists('SocTeamCpt')) {
          register_taxonomy('league', 'soccer-team', $args);
       }
 
-      public function register()
+      public function add_metabox_soccer_team()
       {
-         add_action('init', [$this, 'custom_post_type']);
+         add_meta_box(
+            'soccer_team_setings',
+            'Soccer team setings',
+            [$this, 'add_metabox_soccer_team_html'],
+            'soccer-team',
+            'normal',
+            'default'
+         );
+      }
+
+      public function add_metabox_soccer_team_html($post)
+      {
+         $soccer_team_name = get_post_meta($post->ID, 'soccer_team_name', true);
+         $soccer_team_nickname = get_post_meta($post->ID, 'soccer_team_nickname', true);
+         $soccer_team_history = get_post_meta($post->ID, 'soccer_team_history', true);
+         echo '
+         
+            <p>
+               <label for="soccer_team_name">Name</label>
+               <input type="text" id="soccer_team_name" name="soccer_team_name" value="' . esc_html($soccer_team_name) . '">
+            </p>
+         
+            <p>
+               <label for="soccer_team_nickname">Nickname</label>
+               <input type="text" id="soccer_team_nickname" name="soccer_team_nickname" value="' . esc_html($soccer_team_nickname) . '">
+            </p>         
+            <p>
+               <label for="soccer_team_history">History</label>
+               <textarea type="textarea" id="soccer_team_history" name="soccer_team_history" value="' . esc_html($soccer_team_history) . '"></textarea>
+            </p>         
+         
+         ';
       }
    }
 }
