@@ -1,5 +1,9 @@
 <?php
 
+require_once __DIR__ . '/WP_Term_Image.php';
+
+
+
 if (!class_exists('SocTeamCpt')) {
 
    class SocTeamCpt
@@ -9,6 +13,7 @@ if (!class_exists('SocTeamCpt')) {
          add_action('init', [$this, 'custom_post_type']);
          add_action('add_meta_boxes', [$this, 'add_metabox_soccer_team']);
          add_action('save_post', [$this, 'save_metabox'], 10, 2);
+         add_action('admin_init', [$this, 'league_term_logo']);
       }
 
       public function custom_post_type()
@@ -65,6 +70,13 @@ if (!class_exists('SocTeamCpt')) {
          register_taxonomy('league', 'soccer-team', $args);
       }
 
+      function league_term_logo()
+      {
+         \Kama\WP_Term_Image::init([
+            'taxonomies' => ['league'],
+         ]);
+      }
+
       public function add_metabox_soccer_team()
       {
          add_meta_box(
@@ -82,6 +94,7 @@ if (!class_exists('SocTeamCpt')) {
          $soccer_team_name = get_post_meta($post->ID, 'soccer_team_name', true);
          $soccer_team_nickname = get_post_meta($post->ID, 'soccer_team_nickname', true);
          $soccer_team_history = get_post_meta($post->ID, 'soccer_team_history', true);
+         $soccer_team_img = get_post_meta($post->ID, 'soccer_team_add_img', true);
 
          wp_nonce_field('metabox_soccer_team', '_soccer_team_dt');
 
@@ -98,7 +111,7 @@ if (!class_exists('SocTeamCpt')) {
             <p>
                <label for="soccer_team_history">' . esc_html__('History', ' soccer-teams-dt') . '</label>
                <textarea type="textarea" id="soccer_team_history" name="soccer_team_history">' . esc_attr__($soccer_team_history) . '</textarea>
-            </p>         
+            </p>  
          ';
       }
 

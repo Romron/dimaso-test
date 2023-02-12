@@ -22,11 +22,6 @@ if (!class_exists('SocTeamCpt')) {
    require  SOCCERTEAMSDT_PATH . 'inc/class-cpt.php';
 }
 
-if (!class_exists('Gamajo_Template_Loader')) {
-   require  SOCCERTEAMSDT_PATH . 'inc/class-gamajo-template-loader.php';
-}
-
-require  SOCCERTEAMSDT_PATH . 'inc/class-template-loader.php';
 
 class Soccer_teams_dt
 {
