@@ -22,7 +22,7 @@ if (!class_exists('SocTeamCpt')) {
    require  SOCCERTEAMSDT_PATH . 'inc/class-cpt.php';
 }
 
-require  SOCCERTEAMSDT_PATH . 'inc/class_soccer_teams_dt-elementor.php';
+// require  SOCCERTEAMSDT_PATH . 'inc/class_soccer_teams_dt-elementor.php';
 
 
 class Soccer_teams_dt

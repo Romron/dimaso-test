@@ -1,10 +1,16 @@
 <?php
-class Elementor_Soccer_teams_dt extends \Elementor\Widget_Base
+
+if (!defined('ABSPATH')) {
+   exit; // Exit if accessed directly.
+}
+
+
+class Elementor_Soccer_teams_dt_Widgets extends \Elementor\Widget_Base
 {
 
    public function get_name()
    {
-      return 'soccer teams ';
+      return 'soccer_teams_dt';
    }
 
    public function get_title()
@@ -43,7 +49,7 @@ class Elementor_Soccer_teams_dt extends \Elementor\Widget_Base
          'title',
          [
             'label' => esc_html__('Title', 'soccer-teams-dt'),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'type' => \Elementor\Controls_Manager::TEXT,
             'default' => esc_html__('Hello world', 'soccer-teams-dt'),
          ]
       );
@@ -55,26 +61,26 @@ class Elementor_Soccer_teams_dt extends \Elementor\Widget_Base
 
       // Style Tab Start
 
-      $this->start_controls_section(
-         'section_title_style',
-         [
-            'label' => esc_html__('Title', 'soccer-teams-dt'),
-            'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-         ]
-      );
+      // $this->start_controls_section(
+      //    'section_title_style',
+      //    [
+      //       'label' => esc_html__('Title', 'soccer-teams-dt'),
+      //       'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+      //    ]
+      // );
 
-      $this->add_control(
-         'title_color',
-         [
-            'label' => esc_html__('Text Color', 'soccer-teams-dt'),
-            'type' => \Elementor\Controls_Manager::COLOR,
-            'selectors' => [
-               '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-            ],
-         ]
-      );
+      // $this->add_control(
+      //    'title_color',
+      //    [
+      //       'label' => esc_html__('Text Color', 'soccer-teams-dt'),
+      //       'type' => \Elementor\Controls_Manager::COLOR,
+      //       'selectors' => [
+      //          '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+      //       ],
+      //    ]
+      // );
 
-      $this->end_controls_section();
+      // $this->end_controls_section();
 
       // Style Tab End
 

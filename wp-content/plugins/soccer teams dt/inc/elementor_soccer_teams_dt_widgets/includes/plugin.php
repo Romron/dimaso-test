@@ -1,24 +1,14 @@
 <?php
 
+namespace elementor_soccer_teams_dt_widgets;
 
-function elementor_test_addon()
-{
 
-   // Load plugin file
-   require_once(__DIR__ . '/includes/plugin.php');
-
-   // Run the plugin
-   // \Elementor_Test_Addon\Plugin::instance();
+if (!defined('ABSPATH')) {
+   exit; // Exit if accessed directly.
 }
-add_action('plugins_loaded', 'elementor_test_addon');
 
-
-namespace Elementor_Test_Addon;
-
-
-final class soccer_teams_dt_Plugin
+final class Plugin
 {
-
    const VERSION = '1.0.0';
    const MINIMUM_ELEMENTOR_VERSION = '3.7.0';
    const MINIMUM_PHP_VERSION = '7.3';
@@ -62,7 +52,6 @@ final class soccer_teams_dt_Plugin
          add_action('admin_notices', [$this, 'admin_notice_minimum_php_version']);
          return false;
       }
-
       return true;
    }
 
@@ -73,9 +62,9 @@ final class soccer_teams_dt_Plugin
 
       $message = sprintf(
          /* translators: 1: Plugin name 2: Elementor */
-         esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'elementor-test-addon'),
-         '<strong>' . esc_html__('Elementor Test Addon', 'elementor-test-addon') . '</strong>',
-         '<strong>' . esc_html__('Elementor', 'elementor-test-addon') . '</strong>'
+         esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'soccer-teams-elementor'),
+         '<strong>' . esc_html__('Elementor for Soccer teams dt', 'soccer-teams-elementor') . '</strong>',
+         '<strong>' . esc_html__('Elementor', 'soccer-teams-elementor') . '</strong>'
       );
 
       printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
@@ -88,9 +77,9 @@ final class soccer_teams_dt_Plugin
 
       $message = sprintf(
          /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-         esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-test-addon'),
-         '<strong>' . esc_html__('Elementor Test Addon', 'elementor-test-addon') . '</strong>',
-         '<strong>' . esc_html__('Elementor', 'elementor-test-addon') . '</strong>',
+         esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'soccer-teams-elementor'),
+         '<strong>' . esc_html__('Elementor for Soccer teams dt', 'soccer-teams-elementor') . '</strong>',
+         '<strong>' . esc_html__('Elementor', 'soccer-teams-elementor') . '</strong>',
          self::MINIMUM_ELEMENTOR_VERSION
       );
 
@@ -104,9 +93,9 @@ final class soccer_teams_dt_Plugin
 
       $message = sprintf(
          /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-         esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-test-addon'),
-         '<strong>' . esc_html__('Elementor Test Addon', 'elementor-test-addon') . '</strong>',
-         '<strong>' . esc_html__('PHP', 'elementor-test-addon') . '</strong>',
+         esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'soccer-teams-elementor'),
+         '<strong>' . esc_html__('Elementor for Soccer teams dt', 'soccer-teams-elementor') . '</strong>',
+         '<strong>' . esc_html__('PHP', 'soccer-teams-elementor') . '</strong>',
          self::MINIMUM_PHP_VERSION
       );
 
@@ -115,16 +104,17 @@ final class soccer_teams_dt_Plugin
 
    public function init()
    {
+
       add_action('elementor/widgets/register', [$this, 'register_widgets']);
-      add_action('elementor/controls/register', [$this, 'register_controls']);
+      // add_action('elementor/controls/register', [$this, 'register_controls']);
    }
 
    public function register_widgets($widgets_manager)
    {
 
-      require_once(__DIR__ . '/elementor_widgets/soccer_teams_dt-elementor_widget.php');
+      require_once(__DIR__ . '/widgets/soccer_teams_dt_widgets.php');
 
-      $widgets_manager->register(new Elementor_Soccer_teams_dt());
+      $widgets_manager->register(new Elementor_Soccer_teams_dt_Widgets());
    }
 
    public function register_controls($controls_manager)
