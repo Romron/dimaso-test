@@ -108,8 +108,8 @@ if (!class_exists('SocTeamCpt')) {
                <label for="soccer_team_nickname">' . esc_html__('Nickname', ' soccer-teams-dt') . '</label>
                <input type="text" id="soccer_team_nickname" name="soccer_team_nickname" value="' . esc_attr__($soccer_team_nickname) . '">
             </p>         
+            <label for="soccer_team_history">' . esc_html__('History', ' soccer-teams-dt') . '</label>
             <div class="form-field term-description-wrap">
-               <label for="soccer_team_history">' . esc_html__('History', ' soccer-teams-dt') . '</label>
                <textarea type="textarea" rows="12" cols="40" id="soccer_team_history" name="soccer_team_history">' . esc_attr__($soccer_team_history) . '</textarea>
             </div>  
          ';
