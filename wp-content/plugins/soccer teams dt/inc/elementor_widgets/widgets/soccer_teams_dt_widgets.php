@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 
-class Elementor_Soccer_teams_dt_Widgets extends \Elementor\Widget_Base
+class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
 {
 
    public function get_name()
@@ -20,7 +20,13 @@ class Elementor_Soccer_teams_dt_Widgets extends \Elementor\Widget_Base
 
    public function get_icon()
    {
-      return 'fa fa-futbol-o';          //select icon
+      // return 'fa fa-futbol-o';     
+      // return 'eicon-code';         
+      // return 'fa-futbol';          
+      // return 'fa-duotone fa-futbol';
+
+      // return 'fa fa-code';         
+      return 'eicon-circle-o';
    }
 
    public function get_categories()
@@ -61,26 +67,26 @@ class Elementor_Soccer_teams_dt_Widgets extends \Elementor\Widget_Base
 
       // Style Tab Start
 
-      // $this->start_controls_section(
-      //    'section_title_style',
-      //    [
-      //       'label' => esc_html__('Title', 'soccer-teams-dt'),
-      //       'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-      //    ]
-      // );
+      $this->start_controls_section(
+         'section_title_style',
+         [
+            'label' => esc_html__('Title', 'soccer-teams-dt'),
+            'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+         ]
+      );
 
-      // $this->add_control(
-      //    'title_color',
-      //    [
-      //       'label' => esc_html__('Text Color', 'soccer-teams-dt'),
-      //       'type' => \Elementor\Controls_Manager::COLOR,
-      //       'selectors' => [
-      //          '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-      //       ],
-      //    ]
-      // );
+      $this->add_control(
+         'title_color',
+         [
+            'label' => esc_html__('Text Color', 'soccer-teams-dt'),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+               '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+            ],
+         ]
+      );
 
-      // $this->end_controls_section();
+      $this->end_controls_section();
 
       // Style Tab End
 

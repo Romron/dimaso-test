@@ -20,14 +20,14 @@ if (
    exit; // Exit if accessed directly.
 }
 
-function soccer_teams_elementor()
+function
+register_soccer_teams_dt_widget($widgets_manager)
 {
 
-
    // Load plugin file
-   require_once(__DIR__ . '/includes/plugin.php');
+   require_once(__DIR__ . '/widgets/soccer_teams_dt_widgets.php');
 
    // Run the plugin
-   \elementor_soccer_teams_dt_widgets\Plugin::instance();
+   $widgets_manager->register(new Elementor_Soccer_teams_dt_Widgets());
 }
-add_action('plugins_loaded', 'soccer_teams_elementor');
+add_action('elementor/widgets/register', 'register_soccer_teams_dt_widget');
