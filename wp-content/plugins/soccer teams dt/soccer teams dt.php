@@ -21,8 +21,12 @@ define('SOCCERTEAMSDT_PATH', plugin_dir_path(__FILE__));
 if (!class_exists('SocTeamCpt')) {
    require  SOCCERTEAMSDT_PATH . 'inc/class-cpt.php';
 }
+if (!class_exists('Gamajo_Template_Loader')) {
+   require  SOCCERTEAMSDT_PATH . 'inc/elementor_widgets/class-Gamajo-Template-Loader.php';
+}
+
+require  SOCCERTEAMSDT_PATH . 'inc/elementor_widgets/class-soccer-teams-dt-template-loader.php';
 require  SOCCERTEAMSDT_PATH . 'inc/elementor_widgets/elementor_widgets.php';
-// require  SOCCERTEAMSDT_PATH . 'inc/elementor_widgets/class-soccer_teams-elementor.php';
 
 
 class Soccer_teams_dt

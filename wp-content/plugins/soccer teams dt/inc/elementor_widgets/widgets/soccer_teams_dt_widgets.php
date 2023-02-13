@@ -107,5 +107,20 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
    protected function render()
    {
       $settings = $this->get_settings_for_display();
+
+      $obj_teams = new WP_Query(
+         array(
+            'post_type' => 'soccer-team',
+            'post_per_page' => '3'
+         )
+      );
+
+
+      if ($obj_teams->have_posts()) {
+         while ($obj_teams->have_posts()) {
+            $obj_teams->the_post();
+            the_title();
+         }
+      }
    }
 }
