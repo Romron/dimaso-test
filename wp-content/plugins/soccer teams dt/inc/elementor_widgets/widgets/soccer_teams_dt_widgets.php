@@ -20,12 +20,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
 
    public function get_icon()
    {
-      // return 'fa fa-futbol-o';     
-      // return 'eicon-code';         
-      // return 'fa-futbol';          
-      // return 'fa-duotone fa-futbol';
-
-      // return 'fa fa-code';         
       return 'eicon-circle-o';
    }
 
@@ -46,17 +40,35 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
       $this->start_controls_section(
          'section_title',
          [
-            'label' => esc_html__('Title', 'soccer-teams-dt'),
+            'label' => esc_html__('Soccer teams', 'soccer-teams-dt'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+         ],
+      );
+
+      $this->add_control(
+         'keyword',
+         [
+            'label' => esc_html__('keywords', 'soccer-teams-dt'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => esc_html__('enter keywords', 'soccer-teams-dt'),
          ]
       );
 
       $this->add_control(
-         'title',
+         'number',
          [
-            'label' => esc_html__('Title', 'soccer-teams-dt'),
+            'label' => esc_html__('number', 'soccer-teams-dt'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('Hello world', 'soccer-teams-dt'),
+            'default' => esc_html__('enter number', 'soccer-teams-dt'),
+         ]
+      );
+
+      $this->add_control(
+         'league',
+         [
+            'label' => esc_html__('league', 'soccer-teams-dt'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => esc_html__('enter league', 'soccer-teams-dt'),
          ]
       );
 
@@ -95,12 +107,5 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
    protected function render()
    {
       $settings = $this->get_settings_for_display();
-?>
-
-      <p class="hello-world">
-         <?php echo $settings['title']; ?>
-      </p>
-
-<?php
    }
 }
