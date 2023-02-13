@@ -2,6 +2,11 @@
    max-width: 1200px;
    margin: 0 auto;
 
-   border: 1px solid #0515fd;
+}
+
+article {
+   margin: 20px;
+   border: 1px solid #a2a2ad;
+   padding: 5px;
 
 }
