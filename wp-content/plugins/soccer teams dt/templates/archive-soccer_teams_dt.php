@@ -1,9 +1,9 @@
 <?php
 
-get_header();
+get_header(); ?>
 
+<div class="wraper">
+   **********************
+</div>
 
-echo 'archive-soccer_teams_dt . php';
-
-
-get_footer();
+<?php get_footer(); ?>

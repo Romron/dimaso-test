@@ -48,12 +48,12 @@ class Soccer_teams_dt
 
    public function enqueue_admin()
    {
-      wp_enqueue_style('soccer_teams_dt_style_admin', plugins_url('/assets/css/admin/stule.css', __FILE__), array(), '1.0');
+      wp_enqueue_style('soccer_teams_dt_style_admin', plugins_url('/assets/css/admin/style.css', __FILE__), array(), '1.0');
       wp_enqueue_script('soccer_teams_dt_script_admin', plugins_url('/assets/js/admin/scripts.js', __FILE__), array('jquery'), '1.0', true);
    }
    public function enqueue_front()
    {
-      wp_enqueue_style('soccer_teams_dt_style', plugins_url('/assets/css/front/stule.css', __FILE__), array(), '1.0');
+      wp_enqueue_style('soccer_teams_dt_style', plugins_url('/assets/css/front/style.css', __FILE__), array(), '1.0');
       wp_enqueue_script('soccer_teams_dt_script', plugins_url('/assets/js/front/scripts.js', __FILE__), array('jquery'), '1.0', true);
    }
 

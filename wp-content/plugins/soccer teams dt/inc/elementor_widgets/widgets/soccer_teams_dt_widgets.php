@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 
 class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
 {
+   protected $soccer_teams_Template;
 
    public function get_name()
    {
@@ -115,11 +116,13 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          )
       );
 
+      $this->soccer_teams_Template =  new Soccer_Teams_dt_Template_loader();
 
       if ($obj_teams->have_posts()) {
          while ($obj_teams->have_posts()) {
             $obj_teams->the_post();
-            the_title();
+
+            $this->soccer_teams_Template->get_template_part('');
          }
       }
    }
