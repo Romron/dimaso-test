@@ -1,0 +1,101 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Soccer teams dt\n"
+"POT-Creation-Date: 2023-02-11 23:17+0200\n"
+"PO-Revision-Date: 2023-02-11 23:13+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/cpt.php:20
+msgid "Search Soccer Teams"
+msgstr ""
+
+#: inc/cpt.php:21
+msgid "All Soccer Teams"
+msgstr ""
+
+#: inc/cpt.php:22
+msgid "Parent Soccer Team"
+msgstr ""
+
+#: inc/cpt.php:23
+msgid "Parent Soccer Team:"
+msgstr ""
+
+#: inc/cpt.php:24
+msgid "Edit Soccer Team"
+msgstr ""
+
+#: inc/cpt.php:25
+msgid "Update Soccer Teams"
+msgstr ""
+
+#: inc/cpt.php:26
+msgid "Add New Soccer Teams"
+msgstr ""
+
+#: inc/cpt.php:27
+msgid "New Soccer Team Name"
+msgstr ""
+
+#: inc/cpt.php:28 inc/cpt.php:37
+msgid "Soccer Team"
+msgstr ""
+
+#: inc/cpt.php:46
+msgid "Search Leagues"
+msgstr ""
+
+#: inc/cpt.php:47
+msgid "All Leagues"
+msgstr ""
+
+#: inc/cpt.php:48
+msgid "Parent League"
+msgstr ""
+
+#: inc/cpt.php:49
+msgid "Parent League:"
+msgstr ""
+
+#: inc/cpt.php:50
+msgid "Edit League"
+msgstr ""
+
+#: inc/cpt.php:51
+msgid "Update Leagues"
+msgstr ""
+
+#: inc/cpt.php:52
+msgid "Add New Leagues"
+msgstr ""
+
+#: inc/cpt.php:53
+msgid "New League Name"
+msgstr ""
+
+#: inc/cpt.php:54
+msgid "League"
+msgstr ""
+
+#: inc/cpt.php:91
+msgid "Name"
+msgstr ""
+
+#: inc/cpt.php:95
+msgid "Nickname"
+msgstr ""
+
+#: inc/cpt.php:99
+msgid "History"
+msgstr ""
