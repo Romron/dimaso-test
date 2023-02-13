@@ -23,7 +23,7 @@ class Soccer_Teams_dt_Template_loader extends Gamajo_Template_Loader
          if ($exist != '') {
             return $exist;
          } else {
-            return plugin_dir_path(__FILE__ . 'templates/archive-soccer_teams_dt.php');
+            return plugin_dir_path(__DIR__)  . 'templates/archive-soccer_teams_dt.php';
          }
       }
 
