@@ -25,6 +25,14 @@ class Soccer_Teams_dt_Template_loader extends Gamajo_Template_Loader
          } else {
             return plugin_dir_path(__DIR__)  . 'templates/archive-soccer_teams_dt.php';
          }
+      } elseif (is_singular('soccer-team')) {
+         $theme_files = ['single-soccer_teams_dt.php', 'soccer_teams_dt/single-soccer_teams_dt.php'];
+         $exist = locate_template($theme_files, false);
+         if ($exist != '') {
+            return $exist;
+         } else {
+            return plugin_dir_path(__DIR__)  . 'templates/single-soccer_teams_dt.php';
+         }
       }
 
       return $template;
