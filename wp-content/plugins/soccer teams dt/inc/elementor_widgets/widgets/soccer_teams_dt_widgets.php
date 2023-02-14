@@ -126,6 +126,7 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          'posts_per_page' => $settings['count'],
          'meta_query' => array('relation' => 'AND'),
          'tax_query' => array('relation' => 'AND'),
+         'sentence' => 1,
          's' => '',
       );
 
