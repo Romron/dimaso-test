@@ -20,8 +20,7 @@ if (
    exit; // Exit if accessed directly.
 }
 
-function
-register_soccer_teams_dt_widget($widgets_manager)
+function register_soccer_teams_dt_widget($widgets_manager)
 {
 
    // Load plugin file
