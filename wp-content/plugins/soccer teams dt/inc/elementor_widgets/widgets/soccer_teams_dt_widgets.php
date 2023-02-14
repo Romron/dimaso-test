@@ -70,12 +70,14 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          ]
       );
 
+
+
       $this->add_control(
          'search_by_keyword',
          [
             'label' => esc_html__('Search by keyword', 'soccer-teams-dt'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => '',
+            'default' => esc_html__('Default title', 'textdomain'),
 
          ]
       );
@@ -150,6 +152,7 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
             $this->soccer_teams_Template->get_template_part('partials\content');
          }
       }
+      $settings['search_by_keyword'] = '****';
       wp_reset_postdata();
    }
 }
