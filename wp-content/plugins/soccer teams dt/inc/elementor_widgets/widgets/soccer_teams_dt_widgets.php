@@ -70,8 +70,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          ]
       );
 
-
-
       $this->add_control(
          'search_by_keyword',
          [
@@ -82,38 +80,47 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          ]
       );
 
-
-
       $this->end_controls_section();
 
-      // Content Tab End
-
-
-      // Style Tab Start
-
       $this->start_controls_section(
-         'section_title_style',
+         'style_section',
          [
-            'label' => esc_html__('Title', 'soccer-teams-dt'),
+            'label' => esc_html__('Style', 'textdomain'),
             'tab' => \Elementor\Controls_Manager::TAB_STYLE,
          ]
       );
 
       $this->add_control(
-         'title_color',
+         'text_color',
          [
-            'label' => esc_html__('Text Color', 'soccer-teams-dt'),
+            'label' => esc_html__('Text Color', 'textdomain'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-               '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+               '{{WRAPPER}} .text-style' => 'color: {{VALUE}}',
             ],
          ]
       );
 
+      $this->add_control(
+         'font_family',
+         [
+            'label' => esc_html__('Font Family', 'textdomain'),
+            'type' => \Elementor\Controls_Manager::FONT,
+            'default' => "'Open Sans', sans-serif",
+            'selectors' => [
+               '{{WRAPPER}} .text-style' => 'font-family: {{VALUE}}',
+            ],
+         ]
+      );
+
+      $this->add_group_control(
+         \Elementor\Group_Control_Typography::get_type(),
+         [
+            'name' => 'content_typography',
+            'selector' => '{{WRAPPER}} .text-style',
+         ]
+      );
       $this->end_controls_section();
-
-      // Style Tab End
-
    }
 
    protected function render()
@@ -152,7 +159,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
             $this->soccer_teams_Template->get_template_part('partials\content');
          }
       }
-      $settings['search_by_keyword'] = '****';
       wp_reset_postdata();
    }
 }

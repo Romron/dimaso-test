@@ -28,5 +28,5 @@
    </h3>
 
 
-   <span class="history"> <?php echo esc_html__(get_post_meta(get_the_id(), 'soccer_team_history', true)); ?></span>
+   <span class="history text-style"> <?php echo esc_html__(get_post_meta(get_the_id(), 'soccer_team_history', true)); ?></span>
 </article>
