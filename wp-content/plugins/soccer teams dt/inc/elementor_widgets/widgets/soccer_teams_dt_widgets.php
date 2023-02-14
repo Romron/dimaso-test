@@ -51,11 +51,21 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
       );
 
       $this->add_control(
+         'count',
+         [
+            'label' => esc_html__('Number of teams', 'soccer-teams-dt'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => '3',
+
+         ]
+      );
+
+      $this->add_control(
          'leagues',
          [
             'label' => esc_html__('Select league', 'soccer-teams-dt'),
             'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => '',
+            'default' => '3',
             'options' =>  $this->arr_Leagues,
          ]
       );
@@ -99,7 +109,7 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
 
       $args = array(
          'post_type' => 'soccer-team',
-         'post_per_page' => '-1',
+         'posts_per_page' => $settings['count'],
          'meta_query' => array('relation' => 'AND'),
          'tax_query' => array('relation' => 'AND'),
       );
