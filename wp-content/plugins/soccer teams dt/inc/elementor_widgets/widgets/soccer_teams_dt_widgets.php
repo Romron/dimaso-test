@@ -104,10 +104,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          'tax_query' => array('relation' => 'AND'),
       );
 
-      echo "<pre>";
-      print_r($settings['leagues']);
-      echo "</pre>";
-
       if (isset($settings['leagues']) && $settings['leagues'] != '') {
          array_push($args['tax_query'], array(
             'taxonomy' => 'league',
