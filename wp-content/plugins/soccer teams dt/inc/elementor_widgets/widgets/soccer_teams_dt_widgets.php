@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
 {
    protected $soccer_teams_Template;
-   protected $arr_Leagues = array();
+   protected $arr_Leagues = array('' => 'Clear filter');
 
    public function get_name()
    {
@@ -65,10 +65,21 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          [
             'label' => esc_html__('Select league', 'soccer-teams-dt'),
             'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => '3',
+            'default' => ' ',
             'options' =>  $this->arr_Leagues,
          ]
       );
+
+      $this->add_control(
+         'search_by_keyword',
+         [
+            'label' => esc_html__('Search by keyword', 'soccer-teams-dt'),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => '',
+
+         ]
+      );
+
 
 
       $this->end_controls_section();
@@ -107,18 +118,27 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
    {
       $settings = $this->get_settings_for_display();
 
+      echo $settings['search_by_keyword'];
+
+
       $args = array(
          'post_type' => 'soccer-team',
          'posts_per_page' => $settings['count'],
          'meta_query' => array('relation' => 'AND'),
          'tax_query' => array('relation' => 'AND'),
+         's' => '',
       );
+
 
       if (isset($settings['leagues']) && $settings['leagues'] != '') {
          array_push($args['tax_query'], array(
             'taxonomy' => 'league',
             'terms' => $settings['leagues'],
          ));
+      }
+
+      if (isset($settings['search_by_keyword']) && $settings['search_by_keyword'] != '') {
+         $args['s'] = $settings['search_by_keyword'];
       }
 
       $obj_teams = new WP_Query($args);
