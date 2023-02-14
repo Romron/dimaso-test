@@ -118,9 +118,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
    {
       $settings = $this->get_settings_for_display();
 
-      echo $settings['search_by_keyword'];
-
-
       $args = array(
          'post_type' => 'soccer-team',
          'posts_per_page' => $settings['count'],
@@ -129,7 +126,6 @@ class Elementor_Soccer_teams_dt_Widgets extends Elementor\Widget_Base
          'sentence' => 1,
          's' => '',
       );
-
 
       if (isset($settings['leagues']) && $settings['leagues'] != '') {
          array_push($args['tax_query'], array(
